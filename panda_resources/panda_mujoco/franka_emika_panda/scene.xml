@@ -1,7 +1,16 @@
 <mujoco model="panda scene">
-  <include file="panda.xml"/>
+  <extension>
+    <plugin plugin="mujoco.vrsim.websocket">
+      <instance name="websocket">
+        <config key="port" value="3003"/>
+      </instance>
+    </plugin>
+  </extension>
+  
+  <include file="franka_panda.xml"/>
 
   <statistic center="0.3 0 0.4" extent="1"/>
+
 
   <visual>
     <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
